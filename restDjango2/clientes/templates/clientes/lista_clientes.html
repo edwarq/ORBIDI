@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Gris claro */
+            color: #333; /* Gris oscuro para el texto */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50; /* Un azul oscuro para el encabezado */
+            padding: 20px 0;
+            background-color: #ecf0f1; /* Un gris claro para el fondo */
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff; /* Blanco para las listas */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            color: #34495e; /* Un gris azulado para el texto */
+        }
+
+        li:last-child {
+            border-bottom: none; /* No poner borde en el último elemento */
+        }
+
+        li:nth-child(odd) {
+            background-color: #f9f9f9; /* Color gris muy claro en elementos impares */
+        }
+
+        li:hover {
+            background-color: #e7e7e7; /* Color suave al pasar el mouse */
+            cursor: pointer;
+        }
+
+        .cliente-info {
+            font-size: 16px;
+            font-weight: normal;
+            color: #2c3e50; /* Un tono oscuro y elegante para los textos */
+        }
+
+        .telefono {
+            color: #e67e22; /* Naranja suave para los teléfonos */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <ul>
+    {% for cliente in clientes %}
+        <li>
+            <span class="cliente-info">{{ cliente.nombre }} - {{ cliente.email }}</span>
+            <span class="telefono">{{ cliente.telefono }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
